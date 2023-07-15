@@ -27,9 +27,6 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 
     case "get":
       const contactById = await getContactById(id);
-      if (!contactById) {
-        throw new Error(`Contact with this not found`);
-      }
       console.log(contactById);
       break;
 
@@ -40,7 +37,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 
     case "remove":
       const removedContact = await removeContact(id);
-      console.log(`Contact with id ${id} was removed from the contact list`);
+      console.log(removedContact);
       break;
 
     default:
